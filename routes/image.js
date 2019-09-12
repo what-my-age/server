@@ -7,6 +7,7 @@ const authentication = require('../middlewares/authentication')
 
 router.use(authentication)
 router.post('/', images.multer.single('image'), humanChecker, images.sendUploadToGCS, imageController.getMyAge)
+router.delete('/:id', imageController.delete)
 
 module.exports = router;
 

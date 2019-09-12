@@ -1,6 +1,7 @@
 const photo = require('../models/photo')
 
 class imageController {
+    
     static getMyAge(req, res, next) {
         let labels = req.labels
         let {id} = req.decode
@@ -20,6 +21,14 @@ class imageController {
         }).catch(next)
 
 
+    }
+
+    static delete(req,res,next){
+        let {id} = req.params
+        photo.findByIdAndDelete(id)
+        .then(data => {
+            res.json({data})
+        }).catch(next)
     }
 }
 
