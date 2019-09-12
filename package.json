@@ -1,0 +1,40 @@
+{
+  "name": "myAge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@google-cloud/storage": "^3.2.1",
+    "@google-cloud/vision": "^1.2.0",
+    "axios": "^0.19.0",
+    "bcrypt": "^3.0.6",
+    "captionbot": "^1.0.2",
+    "cognitive-services": "^1.2.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "ibm-watson": "^4.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "node-captionbot": "^1.0.2",
+    "request": "^2.88.0",
+    "watson-developer-cloud": "^4.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/what-my-age/server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/what-my-age/server/issues"
+  },
+  "homepage": "https://github.com/what-my-age/server#readme"
+}
