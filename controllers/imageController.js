@@ -53,6 +53,14 @@ class imageController {
                 })
             }).catch(next)
     }
+
+    static getAll(req,res,next){
+        let {id} = req.decode
+        photo.find({UserId: id}).sort({createdAt:-1})
+        .then(data => {
+            res.json({data})
+        }).catch(next)
+    }
 }
 
 module.exports = imageController

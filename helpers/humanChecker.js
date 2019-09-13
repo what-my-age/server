@@ -18,7 +18,7 @@ client
 .then(results => {
     const labels = results[0].labelAnnotations;
     let flag = false
-    let words = ['Human','Gentleman','Women','Woman','Man','Men','Businessperson','Person','Face','Head','Smile','Student','Footwear']
+    let words = ['Human','Gentleman','Women','Woman','Man','Men','Businessperson','Person','Face','Head','Smile','Student','Footwear','Beauty','Hair','Chin','Ear','Lip','Neck']
     for(let i = 0; i < labels.length;i++){
         for(let j = 0; j < words.length;j++){
             if(labels[i].description == words[j]){
@@ -27,7 +27,6 @@ client
         }
     }
     req.labels = labels
-    
     if(flag){
         next()
     }else{

@@ -29,7 +29,7 @@ function errorHandler(err, req, res, next) {
 
     } else if (err.name == "ValidationError") {
         httpStatus = 400
-        message = err.message
+        message = err.errors.name.message || err.message
         res.status(httpStatus).json({
             message
         })

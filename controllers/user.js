@@ -1,7 +1,4 @@
 const {
-    encrypt
-} = require('../helpers/hash')
-const {
     decrypt
 } = require('../helpers/hash')
 const {
@@ -29,11 +26,11 @@ class UserController {
                     res.status(200).json({
                         token
                     })
+                }else{
+                    next({httpStatus:400,message:'Wrong Email/Password'})
                 }
             } else {
-                res.status(404).json({
-                    message:'user not found'
-                })
+                next({httpStatus:400,message:'Email Not Found'})
             }
         }).catch(next)
     }
@@ -46,7 +43,7 @@ class UserController {
         User.create({
                 name,
                 email,
-                password: encrypt(password),
+                password,
             }).then(data => {
                 res.status(201).json({
                     data

@@ -11,7 +11,6 @@ var uriBase = endpoint + 'vision/v2.0/analyze';
 
 function analyze(req,res,next){
   const imageUrl = req.file.cloudStoragePublicUrl
-  console.log(imageUrl)
 const params = {
     'visualFeatures': 'Categories,Description,Color',
     'details': '',

@@ -49,12 +49,12 @@ const Multer = require('multer'),
         limits: {
           fileSize: 5 * 1024 * 1024
         },
-        fileFilter: function (req, file, cb) {
+        fileFilter: function (req, file, next) {
           if (file.mimetype !== 'image/jpeg') {
            req.fileValidationError = 'goes wrong on the mimetype';
-           return cb(null, false, new Error('goes wrong on the mimetype'));
+           next({httpStatus: 400,message:'Please upload jpeg only'})
           }
-          cb(null, true);
+          next(null, true);
          }
       })
 
