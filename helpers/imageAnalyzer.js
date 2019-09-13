@@ -8,9 +8,10 @@ if (!subscriptionKey) { throw new Error('Set your environment variables for your
 
 var uriBase = endpoint + 'vision/v2.0/analyze';
 
-const imageUrl =
-    'https://storage.cloud.google.com/whatmyage/1568036797847test3.jpeg';
 
+function analyze(req,res,next){
+  const imageUrl = req.file.cloudStoragePublicUrl
+  console.log(imageUrl)
 const params = {
     'visualFeatures': 'Categories,Description,Color',
     'details': '',
@@ -28,10 +29,15 @@ const options = {
 
 request.post(options, (error, response, body) => {
   if (error) {
-    console.log('Error: ', error);
+    next(error)
     return;
   }
-  let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-  console.log('JSON Response\n');
-  console.log(jsonResponse);
+  // console.log(body)
+  let jsonResponse = JSON.parse(body)
+  let captions = jsonResponse.description.captions[0].text
+  req.captions = captions
+  next()
 });
+}
+
+module.exports = analyze

@@ -7,11 +7,19 @@ const photoSchema = new Schema({
         type: String,
         required: true
     },
-    title: {
+    captions: {
         type: String,
         required: true
     },
-    UserId: { type: Schema.ObjectId, ref: 'users' }
+    UserId: { type: Schema.ObjectId, ref: 'users' },
+    gender:{
+        type: String,
+        required:true
+    },
+    age:{
+        type: Number,
+        required: true
+    }
 },{
     timestamps: true,
     versionKey: false

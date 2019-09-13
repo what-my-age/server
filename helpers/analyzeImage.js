@@ -6,8 +6,8 @@ const parameters = {
     'language': 'en'
 };
  
-const body = fs.readFileSync('serverrr.jpeg')
-const headers = { "content-type": "application/octet-stream" };
+const body = 'https://storage.cloud.google.com/whatmyage/1568036883256test3.jpeg'
+const headers = { "content-type": "application/json" };
  
 const checkImage = new cognitiveServices.computerVision({
     apiKey: "4ccab3e016854640871a9e68e3bfef29",
