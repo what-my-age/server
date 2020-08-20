@@ -7,7 +7,7 @@
     "@google-cloud/storage": "^3.2.1",
     "@google-cloud/vision": "^1.2.0",
     "axios": "^0.19.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "captionbot": "^1.0.2",
     "cognitive-services": "^1.2.3",
     "cors": "^2.8.5",
